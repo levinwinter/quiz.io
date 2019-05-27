@@ -1,0 +1,19 @@
+{
+  "name": "quiz.io",
+  "description": "a simple buzzer system",
+  "website": "",
+  "repository": "",
+  "logo": "",
+  "success_url": "/",
+  "keywords": [
+    "buzzer",
+    "quiz.io"
+  ],
+  "scripts": {
+  },
+  "addons": [
+  ],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs"
+  }
+}
