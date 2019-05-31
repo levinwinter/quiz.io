@@ -1,12 +1,3 @@
-:root {
-	--grey: #CCCCCC;
-	--red: #E6464B;
-	--light-grey: #F2F2F2;
-	--light-blue: #3498DB;
-	--blue: #2980B9;
-	--green: #8AFF7F;
-}
-
 .level {
 	height: 100vh;
 }

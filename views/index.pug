@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+    head
+        include head
+        script(src='/public/js/index.js')
+    body
+        include hero
+        section.section
+            .container
+                h1.title Want to play?
+                h2.subtitle Just enter your name and start buzzing.
+                .field.has-addons
+                    .control
+                        input.input#input-name(type='text', placeholder='name')
+                    .control
+                        a.button.is-info#button-join
+                            span.icon
+                                i.fas.fa-rocket
+                            span Join
+        section.section
+            .container
+                h1.title See it live?
+                h2.subtitle You're only one click away.
+                a.button.is-info#button-live
+                    span.icon
+                        i.fas.fa-binoculars
+                    span Live
+        section.section
+            .container
+                h1.title Need to manage?
+                h2.subtitle Press the button below.
+                a.button.gray#button-manage
+                    span.icon
+                        i.fas.fa-cog
+                    span Settings
+        include footer

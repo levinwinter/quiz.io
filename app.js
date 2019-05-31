@@ -9,23 +9,14 @@ const port = 80;
 const connectedUsers = new Map();
 const liveClients = [];
 
+app.set('view engine', 'pug');
+
 app.use('/public', express.static(`${__dirname}/public`));
 
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
-
-app.get('/user/:username', (req, res) => {
-  res.sendFile(`${__dirname}/user.html`);
-});
-
-app.get('/live', (req, res) => {
-  res.sendFile(`${__dirname}/live.html`);
-});
-
-app.get('/manage', (req, res) => {
-  res.sendFile(`${__dirname}/manage.html`);
-});
+app.get('/', (req, res) => { res.render('index'); });
+app.get('/user/:username', (req, res) => { res.render('user'); });
+app.get('/live', (req, res) => { res.render('live'); });
+app.get('/manage', (req, res) => { res.render('manage'); });
 
 io.on('connection', (socket) => {
   socket.on('user', (msg) => {

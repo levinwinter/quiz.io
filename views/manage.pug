@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        include head
+        script(src='/public/js/manage.js')
+    body
+        include hero
+        section.section
+            .container
+                h1.title Game Control
+                h2.subtitle Reactivate the buzzer
+                a.button.is-info#reset
+                    span.icon
+                        i.fas.fa-times
+                    span Reactivate
+        include footer
