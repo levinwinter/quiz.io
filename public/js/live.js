@@ -9,7 +9,6 @@ function generateUserHTML(id, name) {
 }
 
 socket.on('buzzed', (id) => {
-  console.log('buzzed');
   if (!locked) {
     locked = true;
     $(`#${id}`).addClass('has-background-success');
