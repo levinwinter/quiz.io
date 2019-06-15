@@ -7,10 +7,29 @@ html
         include hero
         section.section
             .container
-                h1.title Game Control
-                h2.subtitle Reactivate the buzzer
-                a.button.is-info#reset
-                    span.icon
-                        i.fas.fa-times
-                    span Reactivate
+                h1.title Manage
+                h2.subtitle All the settings to customize the game on the fly.
+                label.label Timer
+                .field.has-addons
+                    .control
+                        input.input.has-text-right#input-timerDuration(type='text')
+                    .control
+                        a.button.is-static seconds
+                label.label Reset Buzzer
+                .field
+                    a.button.is-info#reset
+                        span.icon
+                            i.fas.fa-times
+                        span Reactivate
+                label.label Sandbox
+                .field
+                    a.button.is-info#sandbox
+                        span.icon
+                            i.fas.fa-times
+                        span fire!
+                label.label Live View
+                .select.is-multiple
+                    select(multiple, size='2')#live-view
+                        option(value='overlay') Overlay
+                        option(value='status') Status
         include footer

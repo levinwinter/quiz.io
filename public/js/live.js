@@ -4,8 +4,18 @@ let locked = false;
 let connectedUsers = new Map();
 let lastBuzzed;
 
+socket.emit('getUsers');
+
 function generateUserHTML(id, name) {
   return `<div class="level-item has-text-centered is-marginless" id=${id}><p class="title is-1">${name}</p></div>`;
+}
+
+function updateUsers(userArray) {
+  connectedUsers = new Map(userArray);
+  $('.level').empty();
+  connectedUsers.forEach((value, key) => {
+    $('.level').append(generateUserHTML(key, value));
+  });
 }
 
 socket.on('buzzed', (id) => {
@@ -16,13 +26,9 @@ socket.on('buzzed', (id) => {
   }
 });
 
-socket.on('userUpdate', (msg) => {
-  connectedUsers = new Map(msg);
-  $('.level').empty();
-  connectedUsers.forEach((value, key) => {
-    $('.level').append(generateUserHTML(key, value));
-  });
-});
+socket.on('getUsers', (userArray) => { updateUsers(userArray); });
+
+socket.on('userUpdate', (userArray) => { updateUsers(userArray); });
 
 socket.on('reset', () => {
   locked = false;

@@ -13,7 +13,7 @@
 * timer
 * buzzer and timer
 ###Logic
-* on connect: pull all users
+* ~~on connect: pull all users~~
 
 #Research
 * 

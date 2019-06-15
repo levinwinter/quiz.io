@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{quiz.io/node_modules}" />
-    <file url="PROJECT" libraries="{@types/express, @types/socket.io, @types/socket.io-client, quiz.io/node_modules}" />
+    <file url="PROJECT" libraries="{@types/express, @types/socket.io, @types/socket.io-client, quiz.io/node_modules, svg}" />
     <includedPredefinedLibrary name="HTTP Response Handler" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>

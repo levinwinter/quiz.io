@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        include head
+        link(href='/public/css/sandbox.css', rel='stylesheet', type='text/css')
+        script(src='/public/js/sandbox.js')
+    body
+        .view#overlay
+            object(data="/public/svg/overlay.svg" type="image/svg+xml")
+        .view#status
+            object(data="/public/svg/status.svg" type="image/svg+xml")

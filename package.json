@@ -7,7 +7,8 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "pug": "^2.0.3",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "svg.js": "^2.7.1"
   },
   "scripts": {
     "start": "node app.js"
