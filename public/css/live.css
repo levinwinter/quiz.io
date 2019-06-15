@@ -1,8 +1,12 @@
-.level {
-	height: 100vh;
+html {
+	background-color: rgb(0, 0, 255);
 }
 
-.level-item {
-	height: 100vh;
-    outline: solid 0.15vw;
+body {
+	position: relative;
+}
+
+.view {
+	position: absolute;
+	display: none;
 }
