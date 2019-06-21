@@ -1,4 +1,4 @@
-const gray = 'rgb(238, 238, 238)';
+const green = 'rgb(0, 255, 0)';
 const red = 'rgb(255, 0, 0)';
 
 // eslint-disable-next-line no-undef
@@ -38,11 +38,12 @@ function setScore(player, score) {
 }
 
 function setTimer(player, time) {
-  $('#overlay').contents().find(`#time5.${player}`).css('fill', gray);
-  $('#overlay').contents().find(`#time4.${player}`).css('fill', gray);
-  $('#overlay').contents().find(`#time3.${player}`).css('fill', gray);
-  $('#overlay').contents().find(`#time2.${player}`).css('fill', gray);
-  $('#overlay').contents().find(`#time1.${player}`).css('fill', gray);
+  console.log(`set ${player}'s timer to ${time} seconds.`);
+  $('#overlay').contents().find(`#time5.${player}`).css('fill', green);
+  $('#overlay').contents().find(`#time4.${player}`).css('fill', green);
+  $('#overlay').contents().find(`#time3.${player}`).css('fill', green);
+  $('#overlay').contents().find(`#time2.${player}`).css('fill', green);
+  $('#overlay').contents().find(`#time1.${player}`).css('fill', green);
   switch (time) {
     case 5:
       $('#overlay').contents().find(`#time5.${player}`).css('fill', red);
@@ -55,7 +56,8 @@ function setTimer(player, time) {
       $('#overlay').contents().find(`#time4.${player}`).hide();
       // falls through
     case 3:
-      $('#overlay').contents().find(`#time3.${player}`).hide();
+      $('#overlay').contents().find('circle#time3.Schacht').hide();
+      console.log('hit 3');
       // falls through
     case 2:
       $('#overlay').contents().find(`#time2.${player}`).hide();
@@ -86,6 +88,11 @@ socket.on('live-view', (view) => {
 });
 
 $(document).ready(() => {
+  var s = Snap("#svg");
+  var tux = Snap.load("/public/svg/overlay.svg", function ( loadedFragment ) {
+    s.append( loadedFragment );
+  } );
+
   setTimer('Schacht', 5);
   setScore('Schacht', 3);
   setTimer('Lehrer', 3);

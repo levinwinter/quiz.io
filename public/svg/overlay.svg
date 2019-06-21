@@ -74,46 +74,6 @@
       <stop offset="0" style="stop-color: rgb(227, 223, 214);"/>
       <stop offset="1" style="stop-color: rgb(172, 168, 172);"/>
     </linearGradient>
-    <radialGradient id="gradient-2" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 1311.67575, 778.103027)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-3" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 1369.43676, 778.103027)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-4" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 1427.197067, 778.103149)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-5" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 1484.958549, 778.103149)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-6" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 1542.71875, 778.103088)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-7" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 2592.047119, 778.102783)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-8" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 2649.80835, 778.102783)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-25" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 2707.568604, 778.102905)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-26" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 2765.329834, 778.102905)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
-    <radialGradient id="gradient-27" gradientUnits="userSpaceOnUse" cx="219.393" cy="1016.671" r="23.808" gradientTransform="matrix(0, 1.021078, -1.090389, 0, 2823.090332, 778.102844)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
-      <stop offset="1" style="stop-color: rgb(0, 255, 8);"/>
-    </radialGradient>
   </defs>
   <path style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-0); stroke: url(#gradient-1);" d="M 0 902.257 H 471.897 A 37.925 37.885 0 0 1 509.822 940.142 V 940.142 A 37.925 37.885 0 0 1 471.897 978.026 H 0 V 902.257 Z" class="Schacht" bx:shape="rect 0 902.257 509.822 75.769 0 37.925 37.925 0 1@e5f69aa1"/>
   <rect x="179.301" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Schacht"/>
@@ -123,7 +83,7 @@
   <rect x="338.536" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Schacht"/>
   <rect x="378.344" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Schacht"/>
   <rect x="418.152" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Schacht"/>
-  <text id="name" class="Schacht" style="font-family: Oswald; font-size: 48px; font-weight: 700; paint-order: stroke; stroke-width: 5px; white-space: pre;" x="219.113" y="959.565">SCHACHT</text>
+  <text id="name" style="font-family: Oswald; font-size: 48px; font-weight: 700; paint-order: stroke; stroke-width: 5px; white-space: pre;" x="219.113" y="959.565" class="Schacht">SCHACHT</text>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-9);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, -35.119892, -181.614182)" id="point1" class="Schacht"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-10);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 4.36832, -181.614182)" id="point2" class="Schacht"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-11);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 44.168503, -181.614182)" id="point3" class="Schacht"/>
@@ -131,7 +91,7 @@
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-13);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 123.750458, -181.614182)" id="point5" class="Schacht"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-14);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 163.633545, -181.614182)" id="point6" class="Schacht"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-15);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 203.562531, -181.614182)" id="point7" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-2);" cx="203.109" cy="1018.171" r="23.808" id="time1" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="203.109" cy="1018.171" r="23.808" id="time1" class="Schacht"/>
   <path style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-16); stroke: url(#gradient-24);" d="M 1448.103 902.257 H 1920 V 978.026 H 1448.103 A 37.925 37.885 0 0 1 1410.178 940.142 V 940.142 A 37.925 37.885 0 0 1 1448.103 902.257 Z" class="Lehrer" bx:shape="rect 1410.178 902.257 509.822 75.769 37.925 0 0 37.925 1@2d6c0128"/>
   <rect x="1459.672" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Lehrer"/>
   <rect x="1499.48" y="862.449" width="39.808" height="39.808" style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; stroke: rgb(226, 225, 226);" class="Lehrer"/>
@@ -148,13 +108,13 @@
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-21);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 1404.12146, -181.614136)" id="point3" class="Lehrer"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-22);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 1444.004517, -181.614136)" id="point2" class="Lehrer"/>
   <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 5px; fill: url(#gradient-23);" cx="234.585" cy="1063.831" r="11.155" transform="matrix(1, 0, 0, 1.000002, 1483.933472, -181.614136)" id="point1" class="Lehrer"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-3);" cx="260.87" cy="1018.171" r="23.808" id="circle-1" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-4);" cx="318.631" cy="1018.171" r="23.808" id="circle-2" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-5);" cx="376.391" cy="1018.171" r="23.808" id="circle-3" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-6);" cx="434.152" cy="1018.171" r="23.808" id="circle-4" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-7);" cx="1483.48" cy="1018.171" r="23.808" id="circle-5" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-8);" cx="1541.241" cy="1018.171" r="23.808" id="circle-6" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-25);" cx="1599.002" cy="1018.171" r="23.808" id="circle-7" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-26);" cx="1656.762" cy="1018.171" r="23.808" id="circle-8" class="Schacht"/>
-  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: url(#gradient-27);" cx="1714.523" cy="1018.171" r="23.808" id="circle-9" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="260.87" cy="1018.171" r="23.808" id="time2" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="318.631" cy="1018.171" r="23.808" id="time3" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="376.391" cy="1018.171" r="23.808" id="time4" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="434.152" cy="1018.171" r="23.808" id="time5" class="Schacht"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="1483.48" cy="1018.171" r="23.808" id="time5" class="Lehrer"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="1541.241" cy="1018.171" r="23.808" id="time4" class="Lehrer"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="1599.002" cy="1018.171" r="23.808" id="time3" class="Lehrer"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="1656.762" cy="1018.171" r="23.808" id="time2" class="Lehrer"/>
+  <circle style="fill-rule: evenodd; stroke-linejoin: round; stroke-width: 3px; fill: rgb(0, 255, 0);" cx="1714.523" cy="1018.171" r="23.808" id="time1" class="Lehrer"/>
 </svg>
