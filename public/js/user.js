@@ -3,7 +3,7 @@ const name = window.location.pathname.split('/')[2];
 const socket = io({ query: { type: 'user', name } });
 
 function buzz() {
-  socket.emit('buzzed', socket.id);
+  socket.emit('buzz', name.toLowerCase());
 }
 
 $(document).ready(() => {
@@ -11,8 +11,4 @@ $(document).ready(() => {
   $('.hero').click(() => {
     buzz();
   });
-});
-
-$('.hero-body').click(() => {
-  buzz();
 });

@@ -4,97 +4,126 @@ const red = 'rgb(255, 0, 0)';
 // eslint-disable-next-line no-undef
 const socket = io({ query: { type: 'sandbox' } });
 
-function setScore(player, score) {
-  $('#overlay').contents().find(`#point7.${player}`).hide();
-  $('#overlay').contents().find(`#point6.${player}`).hide();
-  $('#overlay').contents().find(`#point5.${player}`).hide();
-  $('#overlay').contents().find(`#point4.${player}`).hide();
-  $('#overlay').contents().find(`#point3.${player}`).hide();
-  $('#overlay').contents().find(`#point2.${player}`).hide();
-  $('#overlay').contents().find(`#point1.${player}`).hide();
-  switch (score) {
-    case 7:
-      $('#overlay').contents().find(`#point7.${player}`).show();
-      // falls through
-    case 6:
-      $('#overlay').contents().find(`#point6.${player}`).show();
-      // falls through
-    case 5:
-      $('#overlay').contents().find(`#point5.${player}`).show();
-      // falls through
-    case 4:
-      $('#overlay').contents().find(`#point4.${player}`).show();
-      // falls through
-    case 3:
-      $('#overlay').contents().find(`#point3.${player}`).show();
-      // falls through
-    case 2:
-      $('#overlay').contents().find(`#point2.${player}`).show();
-      // falls through
-    case 1:
-      $('#overlay').contents().find(`#point1.${player}`).show();
-      // no default
-  }
+const buzz = new Audio('/public/sound/buzz.mp3');
+const beep = new Audio('/public/sound/beep.mp3');
+const fail = new Audio('/public/sound/fail.mp3');
+
+function Player(name) {
+  this.name = name;
+  // eslint-disable-next-line no-undef
+  const timer = new Timer();
+  this.setScore = function (score) {
+    const $overlay = $('#overlay');
+    $overlay.contents().find(`#point7.${this.name}`).hide();
+    $overlay.contents().find(`#point6.${this.name}`).hide();
+    $overlay.contents().find(`#point5.${this.name}`).hide();
+    $overlay.contents().find(`#point4.${this.name}`).hide();
+    $overlay.contents().find(`#point3.${this.name}`).hide();
+    $overlay.contents().find(`#point2.${this.name}`).hide();
+    $overlay.contents().find(`#point1.${this.name}`).hide();
+    switch (Number(score)) {
+      case 7:
+        $overlay.contents().find(`#point7.${this.name}`).show();
+        // falls through
+      case 6:
+        $overlay.contents().find(`#point6.${this.name}`).show();
+        // falls through
+      case 5:
+        $overlay.contents().find(`#point5.${this.name}`).show();
+        // falls through
+      case 4:
+        $overlay.contents().find(`#point4.${this.name}`).show();
+        // falls through
+      case 3:
+        $overlay.contents().find(`#point3.${this.name}`).show();
+        // falls through
+      case 2:
+        $overlay.contents().find(`#point2.${this.name}`).show();
+        // falls through
+      case 1:
+        $overlay.contents().find(`#point1.${this.name}`).show();
+        // no default
+    }
+  };
+  this.startCountdown = () => {
+    const $overlay = $('#overlay');
+    timer.start({ precision: 'seconds', startValues: { seconds: 0 }, target: { seconds: 5 } });
+    $overlay.contents().find(`#time5.${this.name}`).css('fill', green)
+      .hide();
+    $overlay.contents().find(`#time4.${this.name}`).css('fill', green)
+      .hide();
+    $overlay.contents().find(`#time3.${this.name}`).css('fill', green)
+      .hide();
+    $overlay.contents().find(`#time2.${this.name}`).css('fill', green)
+      .hide();
+    $overlay.contents().find(`#time1.${this.name}`).css('fill', green)
+      .hide();
+    buzz.play();
+    timer.addEventListener(['secondsUpdated'], () => {
+      beep.play();
+      $overlay.contents().find(`#time${timer.getTimeValues().seconds}.${this.name}`).show();
+    });
+    timer.addEventListener(['targetAchieved'], () => {
+      fail.play();
+      $overlay.contents().find(`#time5.${this.name}`).css('fill', red)
+        .show();
+      $overlay.contents().find(`#time4.${this.name}`).css('fill', red)
+        .show();
+      $overlay.contents().find(`#time3.${this.name}`).css('fill', red)
+        .show();
+      $overlay.contents().find(`#time2.${this.name}`).css('fill', red)
+        .show();
+      $overlay.contents().find(`#time1.${this.name}`).css('fill', red)
+        .show();
+    });
+  };
+  this.stopCountdown = function () {
+    timer.stop();
+    const $overlay = $('#overlay');
+    $overlay.contents().find(`#time5.${this.name}`).hide();
+    $overlay.contents().find(`#time4.${this.name}`).hide();
+    $overlay.contents().find(`#time3.${this.name}`).hide();
+    $overlay.contents().find(`#time2.${this.name}`).hide();
+    $overlay.contents().find(`#time1.${this.name}`).hide();
+  };
 }
 
-function setTimer(player, time) {
-  console.log(`set ${player}'s timer to ${time} seconds.`);
-  $('#overlay').contents().find(`#time5.${player}`).css('fill', green);
-  $('#overlay').contents().find(`#time4.${player}`).css('fill', green);
-  $('#overlay').contents().find(`#time3.${player}`).css('fill', green);
-  $('#overlay').contents().find(`#time2.${player}`).css('fill', green);
-  $('#overlay').contents().find(`#time1.${player}`).css('fill', green);
-  switch (time) {
-    case 5:
-      $('#overlay').contents().find(`#time5.${player}`).css('fill', red);
-      $('#overlay').contents().find(`#time4.${player}`).css('fill', red);
-      $('#overlay').contents().find(`#time3.${player}`).css('fill', red);
-      $('#overlay').contents().find(`#time2.${player}`).css('fill', red);
-      $('#overlay').contents().find(`#time1.${player}`).css('fill', red);
-      break;
-    case 4:
-      $('#overlay').contents().find(`#time4.${player}`).hide();
-      // falls through
-    case 3:
-      $('#overlay').contents().find('circle#time3.Schacht').hide();
-      console.log('hit 3');
-      // falls through
-    case 2:
-      $('#overlay').contents().find(`#time2.${player}`).hide();
-      // falls through
-    case 1:
-      $('#overlay').contents().find(`#time1.${player}`).hide();
-      // no default
-  }
-}
+const game = {
+  schacht: new Player('Schacht'),
+  lehrer: new Player('Lehrer'),
+};
 
-socket.on('score', (msg) => {
-  setScore(msg.name, msg.score);
+socket.on('score', (name, score) => {
+  console.log(`name: ${name}, score: ${score}`);
+  game[name].setScore(score);
+});
+
+socket.on('buzz', (name) => {
+  game[name].startCountdown(name);
+});
+
+socket.on('reset', () => {
+  game.schacht.stopCountdown();
+  game.lehrer.stopCountdown();
 });
 
 socket.on('live-view', (view) => {
-  console.log(view);
-  $('#overlay').hide();
-  $('#status').hide();
+  const $overlay = $('#overlay');
+  const $status = $('#status');
+  $overlay.hide();
+  $status.hide();
   switch (view) {
     case 'overlay':
-      $('#overlay').show();
+      $overlay.show();
       break;
     case 'status':
-      $('#status').show();
+      $status.show();
       break;
       // no default
   }
 });
 
 $(document).ready(() => {
-  var s = Snap("#svg");
-  var tux = Snap.load("/public/svg/overlay.svg", function ( loadedFragment ) {
-    s.append( loadedFragment );
-  } );
-
-  setTimer('Schacht', 5);
-  setScore('Schacht', 3);
-  setTimer('Lehrer', 3);
-  setScore('Lehrer', 6);
+  game.schacht.setScore(0);
+  game.lehrer.setScore(0);
 });

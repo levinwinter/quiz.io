@@ -14,5 +14,8 @@
     <orderEntry type="library" name="svg" level="application" />
     <orderEntry type="library" name="d3.v5" level="application" />
     <orderEntry type="library" name="snap.svg" level="application" />
+    <orderEntry type="library" name="@types/socket.io" level="application" />
+    <orderEntry type="library" name="@types/socket.io-client" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
   </component>
 </module>
