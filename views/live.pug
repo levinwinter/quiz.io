@@ -2,10 +2,8 @@ doctype html
 html
     head
         include head
-        link(href='/public/css/sandbox.css', rel='stylesheet', type='text/css')
-        script(src='/public/js/sandbox.js')
+        link(href='/public/css/live.css', rel='stylesheet', type='text/css')
+        script(src='/public/js/live.js')
     body
-        .view#overlay
-            object(data="/public/svg/overlay.svg" type="image/svg+xml")
-        .view#status
-            object(data="/public/svg/status.svg" type="image/svg+xml")
+        object#overlay(data="/public/svg/overlay.svg" type="image/svg+xml")
+        object#status(data="/public/svg/status.svg" type="image/svg+xml")

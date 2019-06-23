@@ -6,7 +6,7 @@ body {
 	position: relative;
 }
 
-.view {
+object {
 	position: absolute;
 	display: none;
 }
