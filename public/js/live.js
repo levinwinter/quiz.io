@@ -1,5 +1,7 @@
 const green = 'rgb(0, 255, 0)';
 const red = 'rgb(255, 0, 0)';
+const black = 'rgb(0, 0, 0)';
+const gray = 'rgb(225, 225, 225)';
 
 // eslint-disable-next-line no-undef
 const socket = io({ query: { type: 'sandbox' } });
@@ -94,7 +96,60 @@ function Player(name) {
 const game = {
   schacht: new Player('Schacht'),
   lehrer: new Player('Lehrer'),
+  1: '',
+  2: '',
+  3: '',
+  4: '',
+  5: '',
+  6: '',
+  7: '',
+  8: '',
 };
+
+function updateStatus() {
+  let scoreSchacht = 0;
+  let scoreLehrer = 0;
+  for (let i = 1; i <= 8; i += 1) {
+    const $status = $('#status');
+    if (game[i].localeCompare('') === 0) {
+      $status.contents().find(`#n${i}.Allgemein`).css('fill', gray);
+      $status.contents().find(`#n${i}.Schacht`).css('fill', black);
+      $status.contents().find(`#n${i}.Lehrer`).css('fill', black);
+    } else if (game[i].localeCompare('Schacht') === 0) {
+      scoreSchacht += i;
+      $status.contents().find(`#n${i}.Allgemein`).css('fill', black);
+      $status.contents().find(`#n${i}.Schacht`).css('fill', gray);
+      $status.contents().find(`#n${i}.Lehrer`).css('fill', black);
+    } else if (game[i].localeCompare('Lehrer') === 0) {
+      scoreLehrer += i;
+      $status.contents().find(`#n${i}.Allgemein`).css('fill', black);
+      $status.contents().find(`#n${i}.Schacht`).css('fill', black);
+      $status.contents().find(`#n${i}.Lehrer`).css('fill', gray);
+    }
+    $status.contents().find('#score.Schacht').text(scoreSchacht.toString());
+    if (scoreSchacht > 18) {
+      $status.contents().find('#bar.Schacht').attr('width', 284.32);
+    } else {
+      $status.contents().find('#bar.Schacht').attr('width', 284.32 * scoreSchacht / 18);
+    }
+    $status.contents().find('#score.Lehrer').text(scoreLehrer.toString());
+    if (scoreLehrer > 18) {
+      $status.contents().find('#bar.Lehrer').attr('width', 284.32);
+    } else {
+      $status.contents().find('#bar.Lehrer').attr('width', 284.32 * scoreLehrer / 18);
+    }
+  }
+}
+
+socket.on('sandbox', (a, b) => {
+  console.log(a + b);
+});
+
+socket.on('winner', (gameNumber, winner) => {
+  console.log(winner);
+  game[gameNumber] = winner;
+  updateStatus();
+});
 
 socket.on('score', (name, score) => {
   game[name].setScore(score);

@@ -34,7 +34,8 @@ io.on('connection', (socket) => {
     buzzed = false;
     io.emit('reset');
   });
-  socket.on('sandbox', (msg) => { io.emit('sandbox', msg); });
+  socket.on('sandbox', (a, b) => { io.emit('sandbox', a, b); });
+  socket.on('winner', (gameNumber, winnerName) => { io.emit('winner', gameNumber, winnerName); });
   socket.on('live-view', (msg) => { io.emit('live-view', msg); });
   socket.on('score', (name, score) => { io.emit('score', name, score); });
 });
