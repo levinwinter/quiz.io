@@ -12,7 +12,7 @@ function Player(name) {
   this.name = name;
   // eslint-disable-next-line no-undef
   const timer = new Timer();
-  this.setScore = function (score) {
+  this.setScore = (score) => {
     const $overlay = $('#overlay');
     $overlay.contents().find(`#point7.${this.name}`).hide();
     $overlay.contents().find(`#point6.${this.name}`).hide();
@@ -60,8 +60,11 @@ function Player(name) {
       .hide();
     buzz.play();
     timer.addEventListener(['secondsUpdated'], () => {
-      beep.play();
-      $overlay.contents().find(`#time${timer.getTimeValues().seconds}.${this.name}`).show();
+      const { seconds } = timer.getTimeValues();
+      if (seconds !== 5) {
+        beep.play();
+        $overlay.contents().find(`#time${timer.getTimeValues().seconds}.${this.name}`).show();
+      }
     });
     timer.addEventListener(['targetAchieved'], () => {
       fail.play();
@@ -77,7 +80,7 @@ function Player(name) {
         .show();
     });
   };
-  this.stopCountdown = function () {
+  this.stopCountdown = () => {
     timer.stop();
     const $overlay = $('#overlay');
     $overlay.contents().find(`#time5.${this.name}`).hide();
@@ -94,7 +97,6 @@ const game = {
 };
 
 socket.on('score', (name, score) => {
-  console.log(`name: ${name}, score: ${score}`);
   game[name].setScore(score);
 });
 

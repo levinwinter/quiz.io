@@ -25,9 +25,7 @@ app.get('/sandbox', (req, res) => { res.render('sandbox'); });
 io.on('connection', (socket) => {
   socket.on('user', (msg) => { io.emit('user', msg); });
   socket.on('buzz', (name) => {
-    console.log('buzz');
     if (!buzzed) {
-      console.log('reached');
       buzzed = true;
       io.emit('buzz', name);
     }
