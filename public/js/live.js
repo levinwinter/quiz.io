@@ -223,6 +223,10 @@ socket.on('live-view', (view) => {
     $timer.show();
     return;
   }
+  if (view.localeCompare('hideTimer') === 0) {
+    $timer.hide();
+    return;
+  }
   $overlay.hide();
   $status.hide();
   $score.hide();

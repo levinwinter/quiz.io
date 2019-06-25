@@ -34,6 +34,9 @@ $(document).ready(() => {
   $('.showTimer').click(() => {
     socket.emit('live-view', 'showTimer');
   });
+  $('.hideTimer').click(() => {
+    socket.emit('live-view', 'hideTimer');
+  });
   $('.resetTimer90s').click(() => {
     socket.emit('timerDuration', 90);
     socket.emit('timerControl', 'reset');
