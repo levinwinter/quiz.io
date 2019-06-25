@@ -16,6 +16,10 @@ function Player(name) {
   const timer = new Timer();
   this.setScore = (score) => {
     const $overlay = $('#overlay');
+    const $score = $('#score');
+    const $score4 = $('#score4');
+    const $score5 = $('#score5');
+    $score.contents().find(`#score.${this.name.charAt(0).toUpperCase() + this.name.substring(1)}`).text(score.toString());
     $overlay.contents().find(`#point7.${this.name}`).hide();
     $overlay.contents().find(`#point6.${this.name}`).hide();
     $overlay.contents().find(`#point5.${this.name}`).hide();
@@ -23,6 +27,15 @@ function Player(name) {
     $overlay.contents().find(`#point3.${this.name}`).hide();
     $overlay.contents().find(`#point2.${this.name}`).hide();
     $overlay.contents().find(`#point1.${this.name}`).hide();
+    $score4.contents().find(`#point4.${this.name}`).hide();
+    $score4.contents().find(`#point3.${this.name}`).hide();
+    $score4.contents().find(`#point2.${this.name}`).hide();
+    $score4.contents().find(`#point1.${this.name}`).hide();
+    $score5.contents().find(`#point5.${this.name}`).hide();
+    $score5.contents().find(`#point4.${this.name}`).hide();
+    $score5.contents().find(`#point3.${this.name}`).hide();
+    $score5.contents().find(`#point2.${this.name}`).hide();
+    $score5.contents().find(`#point1.${this.name}`).hide();
     switch (Number(score)) {
       case 7:
         $overlay.contents().find(`#point7.${this.name}`).show();
@@ -32,18 +45,27 @@ function Player(name) {
         // falls through
       case 5:
         $overlay.contents().find(`#point5.${this.name}`).show();
+        $score5.contents().find(`#point5.${this.name}`).show();
         // falls through
       case 4:
         $overlay.contents().find(`#point4.${this.name}`).show();
+        $score4.contents().find(`#point4.${this.name}`).show();
+        $score5.contents().find(`#point4.${this.name}`).show();
         // falls through
       case 3:
         $overlay.contents().find(`#point3.${this.name}`).show();
+        $score4.contents().find(`#point3.${this.name}`).show();
+        $score5.contents().find(`#point3.${this.name}`).show();
         // falls through
       case 2:
         $overlay.contents().find(`#point2.${this.name}`).show();
+        $score4.contents().find(`#point2.${this.name}`).show();
+        $score5.contents().find(`#point2.${this.name}`).show();
         // falls through
       case 1:
         $overlay.contents().find(`#point1.${this.name}`).show();
+        $score4.contents().find(`#point1.${this.name}`).show();
+        $score5.contents().find(`#point1.${this.name}`).show();
         // no default
     }
   };
@@ -94,6 +116,9 @@ function Player(name) {
 }
 
 const game = {
+  // eslint-disable-next-line no-undef
+  timer: new Timer(),
+  timerDuration: 0,
   schacht: new Player('Schacht'),
   lehrer: new Player('Lehrer'),
   1: '',
@@ -104,6 +129,16 @@ const game = {
   6: '',
   7: '',
   8: '',
+  resetTimer: () => {
+    game.timer.stop();
+    $('#timer').contents().find('#timerText').text(game.timerDuration.toString());
+  },
+  startTimer: () => {
+    game.timer.start({ countdown: true, startValues: { seconds: game.timerDuration } });
+    game.timer.addEventListener(['secondsUpdated'], () => {
+      $('#timer').contents().find('#timerText').text(game.timer.getTotalTimeValues().seconds);
+    });
+  },
 };
 
 function updateStatus() {
@@ -141,12 +176,10 @@ function updateStatus() {
   }
 }
 
-socket.on('sandbox', (a, b) => {
-  console.log(a + b);
+socket.on('sandbox', () => {
 });
 
 socket.on('winner', (gameNumber, winner) => {
-  console.log(winner);
   game[gameNumber] = winner;
   updateStatus();
 });
@@ -164,11 +197,37 @@ socket.on('reset', () => {
   game.lehrer.stopCountdown();
 });
 
+socket.on('timerControl', (control) => {
+  switch (control) {
+    case 'reset':
+      game.resetTimer();
+      break;
+    case 'start':
+      game.startTimer();
+    // no default
+  }
+});
+
+socket.on('timerDuration', (duration) => {
+  game.timerDuration = duration;
+});
+
 socket.on('live-view', (view) => {
   const $overlay = $('#overlay');
   const $status = $('#status');
+  const $score = $('#score');
+  const $score4 = $('#score4');
+  const $score5 = $('#score5');
+  const $timer = $('#timer');
+  if (view.localeCompare('showTimer') === 0) {
+    $timer.show();
+    return;
+  }
   $overlay.hide();
   $status.hide();
+  $score.hide();
+  $score4.hide();
+  $score5.hide();
   switch (view) {
     case 'overlay':
       $overlay.show();
@@ -176,11 +235,21 @@ socket.on('live-view', (view) => {
     case 'status':
       $status.show();
       break;
+    case 'score':
+      $score.show();
+      break;
+    case 'score4':
+      $score4.show();
+      break;
+    case 'score5':
+      $score5.show();
+      break;
+    case 'none':
+      break;
       // no default
   }
 });
 
 $(document).ready(() => {
-  game.schacht.setScore(0);
-  game.lehrer.setScore(0);
+  window.onbeforeunload = () => 'Das Neuladen löscht alle Spielstände!';
 });

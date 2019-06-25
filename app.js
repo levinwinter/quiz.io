@@ -4,7 +4,7 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
-let buzzed = false;
+const show = require('./models/show.js');
 
 app.set('view engine', 'pug');
 
@@ -25,19 +25,22 @@ app.get('/sandbox', (req, res) => { res.render('sandbox'); });
 io.on('connection', (socket) => {
   socket.on('user', (msg) => { io.emit('user', msg); });
   socket.on('buzz', (name) => {
-    if (!buzzed) {
-      buzzed = true;
+    if (!show.isAnswering()) {
+      show.buzzed();
       io.emit('buzz', name);
     }
   });
   socket.on('reset', () => {
-    buzzed = false;
+    show.answered();
     io.emit('reset');
   });
-  socket.on('sandbox', (a, b) => { io.emit('sandbox', a, b); });
-  socket.on('winner', (gameNumber, winnerName) => { io.emit('winner', gameNumber, winnerName); });
+  socket.on('winner', (gameNumber, winner) => {
+    io.emit('winner', gameNumber, winner);
+  });
   socket.on('live-view', (msg) => { io.emit('live-view', msg); });
   socket.on('score', (name, score) => { io.emit('score', name, score); });
+  socket.on('timerControl', (control) => { io.emit('timerControl', control); });
+  socket.on('timerDuration', (duration) => { io.emit('timerDuration', duration); });
 });
 
 http.listen('80');

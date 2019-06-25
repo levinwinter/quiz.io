@@ -7,83 +7,178 @@ html
         include hero
         section.section
             .container
-                h1.title Manage
-                h2.subtitle All the settings to customize the game on the fly.
-                label.label Spiel 1: Liedermemory
-                .field#1
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 2: Activity
-                .field#2
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 3: Blamieren oder Kassieren
-                .field#3
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 4: Becherfußball
-                .field#4
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 5: Fahrradparcour
-                .field#5
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 6: Anno Domini
-                .field#6
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 7: Wer hat schon mal?
-                .field#7
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Spiel 8: Wasserbombenhelm
-                .field#8
-                    .buttons.has-addons
-                        span.button.schacht Schacht
-                        span.button.x X
-                        span.button.lehrer Lehrer
-                label.label Timer
+                h1.title.is-5 Allgemein
+                .field
+                    label.label Live-Maske
+                    .control
+                        .button#status Punkteübersicht einblenden
+                .field
+                    .control
+                        .button#hideAll Alles ausblenden
+        section.section#1
+            .container
+                h1.title.is-5 Spiel 1: Liedermemory
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+        section.section#2
+            .container
+                h1.title.is-5 Spiel 2: Activity
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+                .field
+                    label.label Live-Maske
+                    .control
+                        .button#score Score-Overlay einblenden
+                .field
+                    .control
+                        .button.showTimer Timer-Overlay einblenden
+                .field
+                    label.label Timer
+                    .control
+                        .button.resetTimer90s Timer zurücksetzen
+                .field
+                    .control
+                        .button.startTimer Timer starten
+                .field
+                    label.label Punkte: Team Schacht
                 .field.has-addons
                     .control
-                        input.input.has-text-right#input-timerDuration(type='text')
+                        input.input.has-text-right.punkteSchacht(type='number', min='0')
                     .control
-                        a.button.is-static seconds
-                label.label Reset Buzzer
+                        a.button.is-static Punkte
                 .field
-                    a.button.is-info#reset
-                        span.icon
-                            i.fas.fa-times
-                        span Reactivate
-                label.label Sandbox
-                .field
-                    a.button.is-info#sandbox
-                        span.icon
-                            i.fas.fa-times
-                        span fire!
-                label.label Live View
-                .select.is-multiple
-                    select(multiple, size='2')#live-view
-                        option(value='overlay') Overlay
-                        option(value='status') Status
-                label.label Score - Schacht
+                    label.label Punkte: Team Lehrer
                 .field.has-addons
                     .control
-                        input.input.has-text-right#input-scoreSchacht(type='text')
+                        input.input.has-text-right.punkteLehrer(type='number', min='0')
                     .control
-                        a.button.is-static points
+                        a.button.is-static Punkte
+        section.section#3
+            .container
+                h1.title.is-5 Spiel 3: Blamieren oder Kassieren
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+                .field
+                    label.label Live-Maske
+                    .control
+                        .button#overlay Buzzer-Overlay einblenden
+                .field
+                    label.label Buzzer
+                    .control
+                        .button#reset Antwort abgegeben
+                .field
+                    label.label Punkte: Team Schacht
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteSchacht(type='number', min='0', max='2')
+                    .control
+                        a.button.is-static Punkte
+                .field
+                    label.label Punkte: Team Lehrer
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteLehrer(type='number', min='0', max='2')
+                    .control
+                        a.button.is-static Punkte
+        section.section#4
+            .container
+                h1.title.is-5 Spiel 4: Becherfußball
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+        section.section#5
+            .container
+                h1.title.is-5 Spiel 5: Fahrradparcour
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+        section.section#6
+            .container
+                h1.title.is-5 Spiel 6: Anno Domini
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+                .field
+                    label.label Live-Maske
+                    .control
+                        .button#score4 Score-Overlay einblenden
+                .field
+                    label.label Punkte: Team Schacht
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteSchacht(type='number', min='0', max='4')
+                    .control
+                        a.button.is-static Punkte
+                .field
+                    label.label Punkte: Team Lehrer
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteLehrer(type='number', min='0', max='4')
+                    .control
+                        a.button.is-static Punkte
+        section.section#7
+            .container
+                h1.title.is-5 Spiel 7: Wer hat schon mal?
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
+                .field
+                    label.label Live-Maske
+                    .control
+                        .button#score5 Score-Overlay einblenden
+                .field
+                    label.label Punkte: Team Schacht
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteSchacht(type='number', min='0', max='5')
+                    .control
+                        a.button.is-static Punkte
+                .field
+                    label.label Punkte: Team Lehrer
+                .field.has-addons
+                    .control
+                        input.input.has-text-right.punkteLehrer(type='number', min='0', max='5')
+                    .control
+                        a.button.is-static Punkte
+        section.section#8
+            .container
+                h1.title.is-5 Spiel 8: Wasserbombenhelm
+                .field
+                    label.label Gewinner
+                    .control
+                        .buttons.has-addons
+                            span.button.schacht Schacht
+                            span.button.x ---
+                            span.button.lehrer Lehrer
         include footer
